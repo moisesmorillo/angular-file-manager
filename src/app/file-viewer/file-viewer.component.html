@@ -1,3 +1,8 @@
-<p>
-  file-viewer works!
-</p>
+<div fxLayout="row" fxLayoutGap="20px" *ngIf="dataSource && dataSource.length">
+  <mat-card fxFlex="30" fxFlex.sm="50" *ngFor="let element of dataSource">
+    <mat-icon>{{
+      element.type === 'folder' ? 'folder' : 'file_copy'
+    }}</mat-icon>
+    {{ element.name }}
+  </mat-card>
+</div>

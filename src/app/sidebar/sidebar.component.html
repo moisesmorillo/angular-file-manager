@@ -19,6 +19,7 @@
         mat-icon-button
         matTreeNodeToggle
         [attr.aria-label]="'toggle ' + node.filename"
+        (click)="fireEvent(node)"
       >
         <mat-icon class="mat-icon-rtl-mirror">
           {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}

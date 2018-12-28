@@ -1,5 +1,5 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, EventEmitter, Output } from '@angular/core';
 import { FileManagerService } from '../file-manager.service';
 import {
   MatTreeFlatDataSource,
@@ -18,7 +18,8 @@ export class FileFlatNode {
     public expandable: boolean,
     public filename: string,
     public level: number,
-    public type: any
+    public type: any,
+    public id: number
   ) {}
 }
 
@@ -71,6 +72,8 @@ export class SidebarComponent {
   treeControl: FlatTreeControl<FileFlatNode>;
   treeFlattener: MatTreeFlattener<FileNode, FileFlatNode>;
   dataSource: MatTreeFlatDataSource<FileNode, FileFlatNode>;
+  id = 0;
+  @Output() eventData = new EventEmitter<any>();
 
   constructor(database: FileDatabase) {
     this.treeFlattener = new MatTreeFlattener(
@@ -87,12 +90,22 @@ export class SidebarComponent {
       this.treeControl,
       this.treeFlattener
     );
-
-    database.dataChange.subscribe(data => (this.dataSource.data = data));
+    database.dataChange.subscribe(data => {
+      this.dataSource.data = data;
+      if (data.length > 1) {
+        this.fireEvent(data, true);
+      }
+    });
   }
 
   transformer = (node: FileNode, level: number) => {
-    return new FileFlatNode(!!node.children, node.filename, level, node.type);
+    return new FileFlatNode(
+      !!node.children,
+      node.filename,
+      level,
+      node.type,
+      this.generateSecuencialId()
+    );
   };
 
   private _getLevel = (node: FileFlatNode) => node.level;
@@ -103,4 +116,16 @@ export class SidebarComponent {
     observableOf(node.children);
 
   hasChild = (_: number, _nodeData: FileFlatNode) => _nodeData.expandable;
+
+  generateSecuencialId() {
+    return (this.id += 1);
+  }
+
+  fireEvent(data, initial = false) {
+    const dataToFire = {
+      data,
+      initial
+    };
+    this.eventData.emit(dataToFire);
+  }
 }

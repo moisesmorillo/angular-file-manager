@@ -8,7 +8,7 @@ import { FileViewerComponent } from './file-viewer/file-viewer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FileManagerService } from './file-manager.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule, MatTreeModule } from '@angular/material';
+import { MatIconModule, MatTreeModule, MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [AppComponent, SidebarComponent, FileViewerComponent],
@@ -19,7 +19,8 @@ import { MatIconModule, MatTreeModule } from '@angular/material';
     FlexLayoutModule,
     HttpClientModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ],
   providers: [FileManagerService],
   bootstrap: [AppComponent]

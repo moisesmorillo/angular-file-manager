@@ -1,5 +1,8 @@
 <div fxLayout="row" fxFill>
-  <app-sidebar fxFlex="25"></app-sidebar>
-  <app-file-viewer fxFlex="75"></app-file-viewer>
+  <app-sidebar
+    (eventData)="fileViewer.handleEvent($event)"
+    fxFlex="25"
+  ></app-sidebar>
+  <app-file-viewer #fileViewer fxFlex="75"></app-file-viewer>
 </div>
 <router-outlet></router-outlet>
