@@ -1,0 +1,107 @@
+{
+  "Tequendama": {
+    "Rodete": {
+      "En uso": {
+        "Montado": {
+          "Dato_1": "id_dato",
+          "Dato_2": "id_dato"
+        }
+      },
+      "Repuesto": {
+        "Dado de baja": {},
+        "Por reparar": {},
+        "En reparación": {},
+        "Reparado": {}
+      }
+    },
+    "Inyector": {
+      "En uso": {},
+      "Repuesto": {}
+    }
+  },
+  "Salto II": {
+    "Rodete": {
+      "En uso": {
+        "Montado": {}
+      },
+      "Repuesto": {
+        "Dado de baja": {},
+        "Por reparar": {},
+        "En reparación": {},
+        "Reparado": {}
+      }
+    },
+    "Inyector": {
+      "En uso": {},
+      "Repuesto": {}
+    }
+  },
+  "Dario Valencia": {
+    "Rodete": {
+      "En uso": {
+        "Montado": {}
+      },
+      "Repuesto": {
+        "Dado de baja": {},
+        "Por reparar": {},
+        "En reparación": {},
+        "Reparado": {}
+      }
+    },
+    "Inyector": {
+      "En uso": {},
+      "Repuesto": {}
+    }
+  },
+  "Paraiso": {
+    "Rodete": {
+      "En uso": {
+        "Montado": {}
+      },
+      "Repuesto": {
+        "Dado de baja": {},
+        "Por reparar": {},
+        "En reparación": {},
+        "Reparado": {}
+      }
+    },
+    "Inyector": {
+      "En uso": {},
+      "Repuesto": {}
+    }
+  },
+  "Guaca": {
+    "Rodete": {
+      "En uso": {
+        "Montado": {}
+      },
+      "Repuesto": {
+        "Dado de baja": {},
+        "Por reparar": {},
+        "En reparación": {},
+        "Reparado": {}
+      }
+    },
+    "Inyector": {
+      "En uso": {},
+      "Repuesto": {}
+    }
+  },
+  "Guavio": {
+    "Rodete": {
+      "En uso": {
+        "Montado": {}
+      },
+      "Repuesto": {
+        "Dado de baja": {},
+        "Por reparar": {},
+        "En reparación": {},
+        "Reparado": {}
+      }
+    },
+    "Inyector": {
+      "En uso": {},
+      "Repuesto": {}
+    }
+  }
+}

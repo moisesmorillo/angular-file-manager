@@ -1,0 +1,25 @@
+:host {
+  background-color: #483d55;
+  color: white;
+  .container {
+    position: relative;
+    width: auto;
+    overflow-x: auto;
+    mat-tree {
+      background-color: inherit;
+      color: inherit;
+      button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: inherit;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+      }
+      mat-tree-node {
+        color: inherit;
+      }
+    }
+  }
+}
