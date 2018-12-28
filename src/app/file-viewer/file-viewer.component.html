@@ -6,3 +6,5 @@
     {{ element.name }}
   </mat-card>
 </div>
+
+<h3 *ngIf="dataSource && dataSource.length === 0">No folder opened</h3>

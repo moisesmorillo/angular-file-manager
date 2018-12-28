@@ -122,10 +122,10 @@ export class SidebarComponent {
   }
 
   fireEvent(data, initial = false) {
-    const dataToFire = {
-      data,
-      initial
-    };
-    this.eventData.emit(dataToFire);
+    if (!initial) {
+      const dict = this.dataSource._expandedData.value;
+      data = dict.filter(e => e.level > data.level);
+    }
+    this.eventData.emit(data);
   }
 }
